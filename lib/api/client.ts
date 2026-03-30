@@ -1,10 +1,8 @@
 "use client";
 
-const BACKEND_BASE_URL =
-  process.env.NEXT_PUBLIC_BACKEND_BASE_URL ?? "http://localhost:8080";
-
 const SESSION_TOKEN_KEY = "signalist_session_token";
 const SESSION_USER_KEY = "signalist_session_user";
+const LOCAL_BACKEND_BASE_URL = "http://localhost:8080";
 
 type BackendErrorBody = {
   message?: string;
@@ -18,6 +16,25 @@ type AuthResponse = {
 };
 
 const isBrowser = () => typeof window !== "undefined";
+const trimTrailingSlash = (value: string) => value.replace(/\/+$/, "");
+
+const getConfiguredBackendBaseUrl = () => {
+  const configured = process.env.NEXT_PUBLIC_BACKEND_BASE_URL?.trim();
+  return configured ? trimTrailingSlash(configured) : null;
+};
+
+const getBackendBaseUrl = () => {
+  const configured = getConfiguredBackendBaseUrl();
+  if (configured) return configured;
+  if (!isBrowser()) return LOCAL_BACKEND_BASE_URL;
+
+  const { hostname } = window.location;
+  if (hostname === "localhost" || hostname === "127.0.0.1" || hostname === "::1") {
+    return LOCAL_BACKEND_BASE_URL;
+  }
+
+  return "";
+};
 
 const getStoredToken = () => {
   if (!isBrowser()) return null;
@@ -68,7 +85,7 @@ async function backendJson<T>(
     if (token) headers.set("X-Session-Token", token);
   }
 
-  const response = await fetch(`${BACKEND_BASE_URL}${path}`, {
+  const response = await fetch(`${getBackendBaseUrl()}${path}`, {
     ...init,
     headers,
   });

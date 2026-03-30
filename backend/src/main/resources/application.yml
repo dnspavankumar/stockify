@@ -40,8 +40,7 @@ app:
     daily-digest-enabled: ${DAILY_DIGEST_ENABLED:false}
     daily-digest-cron: ${DAILY_DIGEST_CRON:0 0 12 * * *}
   cors:
-    allowed-origins:
-      - ${FRONTEND_BASE_URL:http://localhost:3000}
+    allowed-origin-patterns: ${CORS_ALLOWED_ORIGIN_PATTERNS:*}
 
 logging:
   level:

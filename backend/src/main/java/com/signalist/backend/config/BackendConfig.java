@@ -40,8 +40,8 @@ public class BackendConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins(properties.getCors().getAllowedOrigins().toArray(String[]::new))
-                        .allowedMethods("GET", "POST", "DELETE", "OPTIONS")
+                        .allowedOriginPatterns(properties.getCors().getAllowedOriginPatterns().toArray(String[]::new))
+                        .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
             }
         };
