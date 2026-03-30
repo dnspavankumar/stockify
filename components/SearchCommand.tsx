@@ -2,13 +2,23 @@
 
 import { useEffect, useState } from "react"
 import { CommandDialog, CommandEmpty, CommandInput, CommandList } from "@/components/ui/command"
-import {Button} from "@/components/ui/button";
-import {Loader2,  TrendingUp} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Loader2, Search, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import {searchStocks} from "@/lib/api/client";
 import {useDebounce} from "@/hooks/useDebounce";
 
-export default function SearchCommand({ renderAs = 'button', label = 'Add stock', initialStocks }: SearchCommandProps) {
+type SearchCommandProps = {
+  renderAs?: 'button' | 'text' | 'header'
+  label?: string
+  initialStocks: StockWithWatchlistStatus[]
+}
+
+export default function SearchCommand({
+  renderAs = 'button',
+  label = 'Add stock',
+  initialStocks,
+}: SearchCommandProps) {
   const [open, setOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
   const [loading, setLoading] = useState(false)
@@ -61,13 +71,23 @@ export default function SearchCommand({ renderAs = 'button', label = 'Add stock'
   return (
     <>
       {renderAs === 'text' ? (
-          <span onClick={() => setOpen(true)} className="search-text">
-            {label}
-          </span>
-      ): (
-          <Button onClick={() => setOpen(true)} className="search-btn">
-            {label}
-          </Button>
+        <span onClick={() => setOpen(true)} className="search-text">
+          {label}
+        </span>
+      ) : renderAs === 'header' ? (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="header-search-trigger"
+          aria-label="Open stock search"
+        >
+          <Search className="h-4 w-4 text-gray-500" />
+          <span className="header-search-label">{label}</span>
+        </button>
+      ) : (
+        <Button onClick={() => setOpen(true)} className="search-btn">
+          {label}
+        </Button>
       )}
       <CommandDialog open={open} onOpenChange={setOpen} className="search-dialog">
         <div className="search-field">

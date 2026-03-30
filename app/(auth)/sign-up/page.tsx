@@ -53,6 +53,7 @@ const SignUp = () => {
     return (
         <>
             <h1 className="form-title">Sign Up & Personalize</h1>
+            <p className="auth-subtitle">Create your account to set your preferences and get a more tailored market dashboard.</p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <InputField
@@ -67,7 +68,7 @@ const SignUp = () => {
                 <InputField
                     name="email"
                     label="Email"
-                    placeholder="contact@jsmastery.com"
+                    placeholder="contact@example.com"
                     register={register}
                     error={errors.email}
                     validation={{ required: 'Email name is required', pattern: /^\w+@\w+\.\w+$/, message: 'Email address is required' }}
@@ -121,7 +122,7 @@ const SignUp = () => {
                     required
                 />
 
-                <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
+                <Button type="submit" disabled={isSubmitting} className="primary-btn w-full mt-5">
                     {isSubmitting ? 'Creating Account' : 'Start Your Investing Journey'}
                 </Button>
 

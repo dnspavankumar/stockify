@@ -44,12 +44,13 @@ const SignIn = () => {
     return (
         <>
             <h1 className="form-title">Welcome back</h1>
+            <p className="auth-subtitle">Sign in to track your watchlist, monitor alerts, and stay on top of the market.</p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <InputField
                     name="email"
                     label="Email"
-                    placeholder="contact@jsmastery.com"
+                    placeholder="contact@example.com"
                     register={register}
                     error={errors.email}
                     validation={{ required: 'Email is required', pattern: /^\w+@\w+\.\w+$/ }}
@@ -65,7 +66,7 @@ const SignIn = () => {
                     validation={{ required: 'Password is required', minLength: 8 }}
                 />
 
-                <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
+                <Button type="submit" disabled={isSubmitting} className="primary-btn w-full mt-5">
                     {isSubmitting ? 'Signing In' : 'Sign In'}
                 </Button>
 

@@ -32,9 +32,9 @@ const UserDropdown = ({ user, initialStocks }: {user: User, initialStocks: Stock
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-3 text-gray-4 hover:text-yellow-500">
+                <Button variant="ghost" className="flex items-center gap-3 text-gray-4 hover:text-blue-400">
                     <Avatar className="h-8 w-8">
-                        <AvatarFallback className="bg-yellow-500 text-yellow-900 text-sm font-bold">
+                        <AvatarFallback className="bg-blue-500 text-white text-sm font-bold">
                             {initials}
                         </AvatarFallback>
                     </Avatar>
@@ -49,7 +49,7 @@ const UserDropdown = ({ user, initialStocks }: {user: User, initialStocks: Stock
                 <DropdownMenuLabel>
                     <div className="flex relative items-center gap-3 py-2">
                         <Avatar className="h-10 w-10">
-                            <AvatarFallback className="bg-yellow-500 text-yellow-900 text-sm font-bold">
+                            <AvatarFallback className="bg-blue-500 text-white text-sm font-bold">
                                 {initials}
                             </AvatarFallback>
                         </Avatar>
@@ -62,7 +62,7 @@ const UserDropdown = ({ user, initialStocks }: {user: User, initialStocks: Stock
                     </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-gray-600"/>
-                <DropdownMenuItem onClick={handleSignOut} className="text-gray-100 text-md font-medium focus:bg-transparent focus:text-yellow-500 transition-colors cursor-pointer">
+                <DropdownMenuItem onClick={handleSignOut} className="text-gray-100 text-md font-medium focus:bg-transparent focus:text-blue-400 transition-colors cursor-pointer">
                     <LogOut className="h-4 w-4 mr-2 hidden sm:block" />
                     Logout
                 </DropdownMenuItem>

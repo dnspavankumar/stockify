@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <a href="https://youtu.be/gu4pafNCXng" target="_blank">
+    <a href="https://github.com/dnspavankumar/stockify" target="_blank">
       <img src="public/readme/hero.webp" alt="Project Banner">
     </a>
   <br />
@@ -21,7 +21,7 @@
   <h3 align="center">Stock Market App — Alerts, Charts, AI Insights</h3>
 
    <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://youtu.be/gu4pafNCXng" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
+     Stockify is available on GitHub at <a href="https://github.com/dnspavankumar/stockify" target="_blank"><b>github.com/dnspavankumar/stockify</b></a>.
     </div>
 </div>
 
@@ -31,35 +31,22 @@
 2. ⚙️ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
 4. 🤸 [Quick Start](#quick-start)
-5. 🔗 [Assets](#links)
-6. 🚀 [More](#more)
-
-## 🚨 Tutorial
-
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
-
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
-
-<a href="https://youtu.be/gu4pafNCXng" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+5. 🔗 [Repository](#repository)
 
 ## <a name="introduction">✨ Introduction</a>
 
 AI-powered modern stock market app built with Next.js, Shadcn, Better Auth, and Inngest! Track real-time prices, set personalized alerts, explore company insights, and manage watchlists. The admin dashboard allows managing stocks, publishing news, and monitoring user activity, while event-driven workflows power automated alerts, AI-driven daily digests, earnings notifications, and sentiment analysis—perfect for devs who want a dynamic, real-time financial platform.
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
-
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
-
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
 - **[Better Auth](https://www.better-auth.com/)** is a framework-agnostic authentication and authorization library for TypeScript. It provides built-in support for email/password login, social sign-on (Google, GitHub, Apple, and more), and multi-factor authentication, simplifying user authentication and account management.
 
-- **[CodeRabbit](https://jsm.dev/stocks-coderabbit)** is an AI-powered code review assistant that integrates with GitHub. It helps developers catch bugs, enforce best practices, and maintain consistent code quality across pull requests, reducing manual review effort and speeding up the development workflow.
+- **[CodeRabbit](https://www.coderabbit.ai/)** is an AI-powered code review assistant that integrates with GitHub. It helps developers catch bugs, enforce best practices, and maintain consistent code quality across pull requests, reducing manual review effort and speeding up the development workflow.
 
 
 - **[Finnhub](https://finnhub.io/)** is a real-time financial data API that provides stock, forex, and cryptocurrency market data. It offers developers access to fundamental data, economic indicators, and news, making it useful for building trading apps, dashboards, and financial analysis tools.
 
-- **[Inngest](https://jsm.dev/stocks-inngest)** is a platform for event-driven workflows and background jobs. It allows developers to build reliable, scalable automated processes such as real-time alerts, notifications, and AI-powered workflows.
+- **[Inngest](https://www.inngest.com/)** is a platform for event-driven workflows and background jobs. It allows developers to build reliable, scalable automated processes such as real-time alerts, notifications, and AI-powered workflows.
 
 - **[MongoDB](https://www.mongodb.com/)** is a flexible, high-performance NoSQL database. It stores data in JSON-like documents, supports dynamic schemas, and provides robust features for scalability, replication, and querying.
 
@@ -77,7 +64,7 @@ If you're getting started and need assistance or face any bugs, join our active 
 
 👉 **Stock Dashboard**: Track real-time stock prices with interactive line and candlestick charts, including historical data, and filter stocks by industry, performance, or market cap.
 
-👉 **Powerful Search**: Quickly find the best stocks with an intelligent search system that helps you navigate through Signalist.
+👉 **Powerful Search**: Quickly find the best stocks with an intelligent search system that helps you navigate through Stockify.
 
 👉 **Watchlist & Alerts**: Create a personalized watchlist, set alert thresholds for price changes or volume spikes, and receive instant email notifications to stay on top of the market.
 
@@ -110,8 +97,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/adrianhajdin/signalist_stock-tracker-app.git
-cd signalist_stock-tracker-app
+git clone https://github.com/dnspavankumar/stockify.git
+cd stockify
 ```
 
 **Project Structure**
@@ -148,7 +135,7 @@ PORT=8080
 MONGODB_URI=
 FRONTEND_BASE_URL=http://localhost:3000
 CORS_ALLOWED_ORIGIN_PATTERNS=*
-SESSION_COOKIE_NAME=signalist_session
+SESSION_COOKIE_NAME=stockify_session
 FINNHUB_BASE_URL=https://finnhub.io/api/v1
 FINNHUB_API_KEY=
 SMTP_HOST=smtp.gmail.com
@@ -156,8 +143,8 @@ SMTP_PORT=587
 SMTP_USERNAME=
 SMTP_PASSWORD=
 MAIL_ENABLED=false
-MAIL_FROM_NAME=Signalist
-MAIL_FROM_ADDRESS=noreply@signalist.local
+MAIL_FROM_NAME=Stockify
+MAIL_FROM_ADDRESS=noreply@stockify.local
 DAILY_DIGEST_ENABLED=false
 DAILY_DIGEST_CRON=0 0 12 * * *
 ```
@@ -188,8 +175,8 @@ The backend will run on [http://localhost:8080](http://localhost:8080).
 From the project root:
 
 ```bash
-docker build -t signalist-backend .
-docker run --rm -p 8080:8080 --env-file backend/.env signalist-backend
+docker build -t stockify-backend .
+docker run --rm -p 8080:8080 --env-file backend/.env stockify-backend
 ```
 
 **Run the Frontend**
@@ -227,22 +214,8 @@ For the frontend deployment, set one of these:
 
 Using `BACKEND_BASE_URL` is the cleaner option for a deployed Next.js frontend because it keeps browser requests on the frontend origin while the app proxies API traffic to Render.
 
-## <a name="links">🔗 Assets</a>
+## <a name="repository">🔗 Repository</a>
 
-Assets and snippets used in the project can be found in the **[video kit](https://jsm.dev/stocks-kit)**.
+Project repository:
 
-<a href="https://jsm.dev/stocks-kit" target="_blank">
-  <img src="public/readme/videokit.webp" alt="Video Kit Banner">
-</a>
-
-## <a name="more">🚀 More</a>
-
-**Advance your skills with Next.js Pro Course**
-
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
-
-<a href="https://jsm.dev/stocks-jsmpro" target="_blank">
-  <img src="public/readme/jsmpro.webp" alt="Project Banner">
-</a>
-# Stocksy
+- <a href="https://github.com/dnspavankumar/stockify" target="_blank">https://github.com/dnspavankumar/stockify</a>

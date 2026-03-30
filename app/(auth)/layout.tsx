@@ -5,38 +5,30 @@ import GuestOnly from "@/components/GuestOnly";
 const Layout = ({ children }: { children : React.ReactNode }) => {
     return (
         <main className="auth-layout">
-            <section className="auth-left-section scrollbar-hide-default">
+            <div className="landing-visual" aria-hidden="true">
+                <Image
+                    src="/assets/images/landing.jpg"
+                    alt="Abstract landing background"
+                    fill
+                    sizes="100vw"
+                    className="landing-visual-image"
+                    priority
+                />
+                <span className="landing-visual-glass" />
+                <span className="landing-visual-noise" />
+            </div>
+
+            <div className="auth-stage">
                 <Link href="/" className="auth-logo inline-flex items-center text-lg font-semibold uppercase tracking-[0.24em] text-gray-100">
                     Stockify
                 </Link>
 
-                <div className="pb-6 lg:pb-8 flex-1">
-                    <GuestOnly>{children}</GuestOnly>
-                </div>
-            </section>
-
-            <section className="auth-right-section">
-                <div className="z-10 relative lg:mt-4 lg:mb-16">
-                    <blockquote className="auth-blockquote">
-                        Stockify turned my watchlist into a winning list. The alerts are spot-on, and I feel more confident making moves in the market
-                    </blockquote>
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <cite className="auth-testimonial-author">- Ethan R.</cite>
-                            <p className="max-md:text-xs text-gray-500">Retail Investor</p>
-                        </div>
-                        <div className="flex items-center gap-0.5">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                                <Image src="/assets/icons/star.svg" alt="Star" key={star} width={20} height={20} className="w-5 h-5" />
-                            ))}
-                        </div>
+                <section className="auth-shell">
+                    <div className="auth-card scrollbar-hide-default">
+                        <GuestOnly>{children}</GuestOnly>
                     </div>
-                </div>
-
-                <div className="flex-1 relative">
-                    <Image src="/assets/images/dashboard.png" alt="Dashboard Preview" width={1440} height={1150} className="auth-dashboard-preview absolute top-0" />
-                </div>
-            </section>
+                </section>
+            </div>
         </main>
     )
 }
